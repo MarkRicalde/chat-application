@@ -67,7 +67,7 @@ io.on('connection', (socket) => {
     socket.on('chat command', (cmd) => {
         const serverReply = {
             user: serverUser,
-            text: "Command successfully completed",
+            text: "Successfully handled command.",
             timestamp: moment().unix(),
         };
 
@@ -77,10 +77,11 @@ io.on('connection', (socket) => {
             io.emit('online users', onlineUsers);
             socket.emit('user', user);
         } catch (err) {
-            serverReply.text = 'Error handling command';
+            serverReply.text = `Error handling command: ${err}`;
         } finally {
             socket.emit('chat command', serverReply);
         }
+        console.log('cmd: ' + cmd);
     });
 
     // Handle disconnects
