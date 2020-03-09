@@ -1,0 +1,15 @@
+/**
+ * Name: Mark Danez Ricalde
+ * UCID: 10171889
+ * Tutorial section: B02
+ */
+
+.App {
+  height: 100vh;
+  background-color: #F5F5F5;
+}
+
+.max-width {
+  max-width: 100%;
+}
+
